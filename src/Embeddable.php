@@ -17,9 +17,22 @@ trait Embeddable
     {
         static::addGlobalScope(new EmbeddableScope);
 
-        static::observe(new ModelObserver);
+        $whenBootedCallback = function () {
+            static::observe(new ModelObserver);
 
-        (new static)->registerEmbeddableMacros();
+            (new static)->registerEmbeddableMacros();
+        };
+
+        // Registering the observer or instantiating the model while the model
+        // is still booting triggers a re-entrant boot, which Laravel 11+
+        // rejects with a LogicException. Defer that work until the model has
+        // finished booting; fall back to running it immediately on older
+        // versions that lack the whenBooted() hook.
+        if (method_exists(static::class, 'whenBooted')) {
+            static::whenBooted($whenBootedCallback);
+        } else {
+            $whenBootedCallback();
+        }
     }
 
     /**
