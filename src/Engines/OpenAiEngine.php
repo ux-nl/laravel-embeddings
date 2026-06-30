@@ -2,6 +2,8 @@
 
 namespace Vormkracht10\Embedding\Engines;
 
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -28,7 +30,7 @@ class OpenAiEngine implements EngineInterface
     /**
      * Update the given model
      *
-     * @param  \Illuminate\Database\Eloquent\Collection  $models
+     * @param  Collection  $models
      * @return void
      */
     public function update($models)
@@ -107,7 +109,7 @@ class OpenAiEngine implements EngineInterface
     /**
      * Remove the given model from the index.
      *
-     * @param  \Illuminate\Database\Eloquent\Collection  $models
+     * @param  Collection  $models
      * @return void
      */
     public function delete($models)
@@ -123,7 +125,7 @@ class OpenAiEngine implements EngineInterface
     /**
      * Determine if the given model uses soft deletes.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  Model  $model
      * @return bool
      */
     protected function usesSoftDelete($model)

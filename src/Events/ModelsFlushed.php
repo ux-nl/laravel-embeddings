@@ -2,19 +2,21 @@
 
 namespace Vormkracht10\Embedding\Events;
 
+use Illuminate\Database\Eloquent\Collection;
+
 class ModelsFlushed
 {
     /**
      * The model collection.
      *
-     * @var \Illuminate\Database\Eloquent\Collection
+     * @var Collection
      */
     public $models;
 
     /**
      * Create a new event instance.
      *
-     * @param  \Illuminate\Database\Eloquent\Collection  $models
+     * @param  Collection  $models
      * @return void
      */
     public function __construct($models)

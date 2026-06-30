@@ -3,6 +3,7 @@
 namespace Vormkracht10\Embedding;
 
 use Illuminate\Support\Manager;
+use Vormkracht10\Embedding\Engines\EngineInterface;
 use Vormkracht10\Embedding\Engines\NullEngine;
 use Vormkracht10\Embedding\Engines\OpenAiEngine;
 
@@ -12,7 +13,7 @@ class EngineManager extends Manager
      * Get a driver instance.
      *
      * @param  string|null  $name
-     * @return \Vormkracht10\Embedding\Engines\EngineInterface
+     * @return EngineInterface
      */
     public function engine($name = null)
     {
@@ -22,7 +23,7 @@ class EngineManager extends Manager
     /**
      * Create an Algolia engine instance.
      *
-     * @return \Vormkracht10\Embedding\Engines\OpenAiEngine
+     * @return OpenAiEngine
      */
     public function createOpenAiDriver()
     {

@@ -2,8 +2,10 @@
 
 namespace Vormkracht10\Embedding;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Collection as BaseCollection;
 
 trait Embeddable
@@ -143,7 +145,7 @@ trait Embeddable
     /**
      * Modify the collection of models being made embeddable.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function makeEmbeddableUsing(BaseCollection $models)
     {
@@ -153,7 +155,7 @@ trait Embeddable
     /**
      * Modify the query used to retrieve models when making all of the models embeddable.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
     protected function makeAllEmbeddableUsing(EloquentBuilder $query)
     {

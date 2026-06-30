@@ -3,7 +3,9 @@
 namespace Vormkracht10\Embedding\Jobs;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Database\ModelIdentifier;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Queue\SerializesModels;
 
 class RemoveFromEmbed implements ShouldQueue
@@ -13,14 +15,14 @@ class RemoveFromEmbed implements ShouldQueue
     /**
      * The models to be removed from the search index.
      *
-     * @var \Vormkracht10\Embedding\Jobs\RemoveableEmbedCollection
+     * @var RemoveableEmbedCollection
      */
     public $models;
 
     /**
      * Create a new job instance.
      *
-     * @param  \Illuminate\Database\Eloquent\Collection  $models
+     * @param  Collection  $models
      * @return void
      */
     public function __construct($models)
@@ -43,8 +45,8 @@ class RemoveFromEmbed implements ShouldQueue
     /**
      * Restore a queueable collection instance.
      *
-     * @param  \Illuminate\Contracts\Database\ModelIdentifier  $value
-     * @return \Vormkracht10\Embedding\Jobs\RemoveableEmbedCollection
+     * @param  ModelIdentifier  $value
+     * @return RemoveableEmbedCollection
      */
     protected function restoreCollection($value)
     {
