@@ -2,8 +2,10 @@
 
 namespace Vormkracht10\Embedding;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Collection as BaseCollection;
 
 trait Embeddable
@@ -17,9 +19,22 @@ trait Embeddable
     {
         static::addGlobalScope(new EmbeddableScope);
 
-        static::observe(new ModelObserver);
+        $whenBootedCallback = function () {
+            static::observe(new ModelObserver);
 
-        (new static)->registerEmbeddableMacros();
+            (new static)->registerEmbeddableMacros();
+        };
+
+        // Registering the observer or instantiating the model while the model
+        // is still booting triggers a re-entrant boot, which Laravel 11+
+        // rejects with a LogicException. Defer that work until the model has
+        // finished booting; fall back to running it immediately on older
+        // versions that lack the whenBooted() hook.
+        if (method_exists(static::class, 'whenBooted')) {
+            static::whenBooted($whenBootedCallback);
+        } else {
+            $whenBootedCallback();
+        }
     }
 
     /**
@@ -130,7 +145,7 @@ trait Embeddable
     /**
      * Modify the collection of models being made embeddable.
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
     public function makeEmbeddableUsing(BaseCollection $models)
     {
@@ -140,7 +155,7 @@ trait Embeddable
     /**
      * Modify the query used to retrieve models when making all of the models embeddable.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
     protected function makeAllEmbeddableUsing(EloquentBuilder $query)
     {

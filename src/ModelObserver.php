@@ -3,6 +3,7 @@
 namespace Vormkracht10\Embedding;
 
 use Closure;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Config;
 
@@ -77,7 +78,7 @@ class ModelObserver
     /**
      * Handle the saved event for the model.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  Model  $model
      * @return void
      */
     public function saved($model)
@@ -98,7 +99,7 @@ class ModelObserver
     /**
      * Handle the deleted event for the model.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  Model  $model
      * @return void
      */
     public function deleted($model)
@@ -119,7 +120,7 @@ class ModelObserver
     /**
      * Handle the force deleted event for the model.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  Model  $model
      * @return void
      */
     public function forceDeleted($model)
@@ -134,7 +135,7 @@ class ModelObserver
     /**
      * Handle the restored event for the model.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  Model  $model
      * @return void
      */
     public function restored($model)
@@ -163,7 +164,7 @@ class ModelObserver
     /**
      * Determine if the given model uses soft deletes.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  Model  $model
      * @return bool
      */
     protected function usesSoftDelete($model)

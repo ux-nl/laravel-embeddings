@@ -4,6 +4,7 @@ namespace Vormkracht10\Embedding\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Queue\SerializesModels;
 
 class MakeEmbeddable implements ShouldQueue
@@ -13,14 +14,14 @@ class MakeEmbeddable implements ShouldQueue
     /**
      * The models to be made embeddable.
      *
-     * @var \Illuminate\Database\Eloquent\Collection
+     * @var Collection
      */
     public $models;
 
     /**
      * Create a new job instance.
      *
-     * @param  \Illuminate\Database\Eloquent\Collection  $models
+     * @param  Collection  $models
      * @return void
      */
     public function __construct($models)
