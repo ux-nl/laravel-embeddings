@@ -1,0 +1,103 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 6
+			path: config/embeddings.php
+
+		-
+			message: '#^Trait Vormkracht10\\Embedding\\Embeddable is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Embeddable.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\:\:unembeddable\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/EmbeddableScope.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:getEmbedKeyName\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: src/EmbeddableScope.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Support\\HigherOrderCollectionProxy\<string, Illuminate\\Database\\Eloquent\\Model, Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\>\:\:shouldBeEmbeddable\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/EmbeddableScope.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$content$#'
+			identifier: parameter.notFound
+			count: 1
+			path: src/Engines/EngineInterface.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:getEmbedKey\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: src/Engines/OpenAiEngine.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:toEmbeddableString\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Engines/OpenAiEngine.php
+
+		-
+			message: '#^Class Vormkracht10\\Embedding\\LaravelEmbed not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Facades/LaravelEmbed.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:makeEmbeddableUsing\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Jobs/MakeEmbeddable.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:embeddableUsing\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Jobs/RemoveFromEmbed.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Support\\HigherOrderCollectionProxy\<string, Illuminate\\Database\\Eloquent\\Model, static\(Vormkracht10\\Embedding\\Jobs\\RemoveableEmbedCollection\)\>\:\:getEmbedKey\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Jobs/RemoveableEmbedCollection.php
+
+		-
+			message: '#^Class Vormkracht10\\Embedding\\Jobs\\Embeddable not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Jobs/RemoveableEmbedCollection.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:embedIndexShouldBeUpdated\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/ModelObserver.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:embeddable\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/ModelObserver.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:shouldBeEmbeddable\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/ModelObserver.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:unembeddable\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: src/ModelObserver.php
