@@ -2,6 +2,25 @@
 
 All notable changes to `laravel-embeddings` will be documented in this file.
 
+## v0.1.1 - 2026-06-30
+
+### Fixed
+
+**Models using the `Embeddable` trait now boot on Laravel 11, 12 and 13.**
+
+`v0.1.0` made the package *install* on newer Laravel, but `Embeddable::bootEmbeddable()` still registered the observer and instantiated the model while the model was mid-boot. Laravel 11+ rejects re-entrant boots with:
+
+```
+LogicException: The [Illuminate\Database\Eloquent\Model::bootIfNotBooted] method
+may not be called on model [...] while it is being booted.
+
+```
+The observer registration and collection-macro setup are now deferred into a `whenBooted()` callback (matching Laravel Scout), so they run after the model has finished booting. Falls back to immediate execution on Laravel versions without the hook. A regression test boots a model using the trait to guard against this.
+
+If you bumped to `v0.1.0` and hit the boot error, upgrade to `v0.1.1`.
+
+**Full Changelog**: https://github.com/ux-nl/laravel-embeddings/compare/v0.1.0...v0.1.1
+
 ## v0.1.0 - 2026-06-30
 
 ### What's new
