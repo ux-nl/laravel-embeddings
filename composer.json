@@ -1,16 +1,16 @@
 {
-    "name": "vormkracht10/laravel-embeddings",
+    "name": "ux-nl/laravel-embeddings",
     "description": "Create embeddings for your Eloquent models to use with OpenAI",
     "keywords": [
-        "vormkracht10",
+        "ux-nl",
         "laravel"
     ],
-    "homepage": "https://github.com/vormkracht10/laravel-embeddings",
+    "homepage": "https://github.com/ux-nl/laravel-embeddings",
     "license": "MIT",
     "authors": [
         {
-            "name": "Vormkracht10",
-            "email": "developers@vormkracht10.nl",
+            "name": "UX",
+            "email": "developers@ux.nl",
             "role": "Developer"
         }
     ],
@@ -32,13 +32,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Vormkracht10\\Embedding\\": "src/",
-            "Vormkracht10\\Embedding\\Database\\Factories\\": "database/factories/"
+            "UX\\Embedding\\": "src/",
+            "UX\\Embedding\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vormkracht10\\Embedding\\Tests\\": "tests/"
+            "UX\\Embedding\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -58,10 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Vormkracht10\\Embedding\\EmbeddingServiceProvider"
+                "UX\\Embedding\\EmbeddingServiceProvider"
             ],
             "aliases": {
-                "Embedding": "Vormkracht10\\Embedding\\Facades\\Embedding"
+                "Embedding": "UX\\Embedding\\Facades\\Embedding"
             }
         }
     },

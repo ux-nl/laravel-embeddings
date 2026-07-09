@@ -1,10 +1,10 @@
 <?php
 
-namespace Vormkracht10\Embedding\Commands;
+namespace UX\Embedding\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Events\Dispatcher;
-use Vormkracht10\Embedding\Events\ModelsImported;
+use UX\Embedding\Events\ModelsImported;
 
 class ImportCommand extends Command
 {

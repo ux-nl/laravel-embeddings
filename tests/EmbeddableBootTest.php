@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Collection;
-use Vormkracht10\Embedding\Tests\Models\EmbeddableTestModel;
+use UX\Embedding\Tests\Models\EmbeddableTestModel;
 
 it('boots a model using the Embeddable trait without a re-entrant boot error', function () {
     // Booting the model runs bootEmbeddable(). On Laravel 11+ registering the

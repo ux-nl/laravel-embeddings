@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\Embedding;
+namespace UX\Embedding;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
