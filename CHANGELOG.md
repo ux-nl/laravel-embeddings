@@ -2,6 +2,37 @@
 
 All notable changes to `laravel-embeddings` will be documented in this file.
 
+## v0.2.0 - 2026-07-09
+
+### ⚠️ Breaking: organization rename (vormkracht10 → ux-nl)
+
+The package has moved to the **ux-nl** organization.
+
+- **Composer package**: `vormkracht10/laravel-embeddings` → `ux-nl/laravel-embeddings`
+- **PHP namespace**: `Vormkracht10\Embedding` → `UX\Embedding`
+
+#### Upgrade
+
+```bash
+composer remove vormkracht10/laravel-embeddings
+composer require ux-nl/laravel-embeddings
+
+```
+Then update every import:
+
+```diff
+- use Vormkracht10\Embedding\Embeddable;
++ use UX\Embedding\Embeddable;
+
+```
+This applies to the `Embeddable` trait, `EmbeddingServiceProvider`, the `Embedding` facade, and any other `Vormkracht10\Embedding\...` reference. No API or behavioural changes — names only.
+
+#### Also updated
+
+Homepage, author (`developers@ux.nl`), README badges/links, LICENSE copyright, funding + issue-template links.
+
+**Full Changelog**: https://github.com/ux-nl/laravel-embeddings/compare/v0.1.1...v0.2.0
+
 ## v0.1.1 - 2026-06-30
 
 ### Fixed
@@ -13,6 +44,7 @@ All notable changes to `laravel-embeddings` will be documented in this file.
 ```
 LogicException: The [Illuminate\Database\Eloquent\Model::bootIfNotBooted] method
 may not be called on model [...] while it is being booted.
+
 
 ```
 The observer registration and collection-macro setup are now deferred into a `whenBooted()` callback (matching Laravel Scout), so they run after the model has finished booting. Falls back to immediate execution on Laravel versions without the hook. A regression test boots a model using the trait to guard against this.
