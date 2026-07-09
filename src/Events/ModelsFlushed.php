@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\Embedding\Events;
+namespace UX\Embedding\Events;
 
 use Illuminate\Database\Eloquent\Collection;
 

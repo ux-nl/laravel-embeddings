@@ -1,11 +1,11 @@
 <?php
 
-namespace Vormkracht10\Embedding;
+namespace UX\Embedding;
 
 use Illuminate\Support\Manager;
-use Vormkracht10\Embedding\Engines\EngineInterface;
-use Vormkracht10\Embedding\Engines\NullEngine;
-use Vormkracht10\Embedding\Engines\OpenAiEngine;
+use UX\Embedding\Engines\EngineInterface;
+use UX\Embedding\Engines\NullEngine;
+use UX\Embedding\Engines\OpenAiEngine;
 
 class EngineManager extends Manager
 {

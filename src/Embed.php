@@ -1,9 +1,9 @@
 <?php
 
-namespace Vormkracht10\Embedding;
+namespace UX\Embedding;
 
-use Vormkracht10\Embedding\Jobs\MakeEmbeddable;
-use Vormkracht10\Embedding\Jobs\RemoveFromEmbed;
+use UX\Embedding\Jobs\MakeEmbeddable;
+use UX\Embedding\Jobs\RemoveFromEmbed;
 
 class Embed
 {

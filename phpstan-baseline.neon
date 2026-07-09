@@ -7,7 +7,7 @@ parameters:
 			path: config/embeddings.php
 
 		-
-			message: '#^Trait Vormkracht10\\Embedding\\Embeddable is used zero times and is not analysed\.$#'
+			message: '#^Trait UX\\Embedding\\Embeddable is used zero times and is not analysed\.$#'
 			identifier: trait.unused
 			count: 1
 			path: src/Embeddable.php
@@ -49,7 +49,7 @@ parameters:
 			path: src/Engines/OpenAiEngine.php
 
 		-
-			message: '#^Class Vormkracht10\\Embedding\\LaravelEmbed not found\.$#'
+			message: '#^Class UX\\Embedding\\LaravelEmbed not found\.$#'
 			identifier: class.notFound
 			count: 1
 			path: src/Facades/LaravelEmbed.php
@@ -67,13 +67,13 @@ parameters:
 			path: src/Jobs/RemoveFromEmbed.php
 
 		-
-			message: '#^Call to an undefined method Illuminate\\Support\\HigherOrderCollectionProxy\<string, Illuminate\\Database\\Eloquent\\Model, static\(Vormkracht10\\Embedding\\Jobs\\RemoveableEmbedCollection\)\>\:\:getEmbedKey\(\)\.$#'
+			message: '#^Call to an undefined method Illuminate\\Support\\HigherOrderCollectionProxy\<string, Illuminate\\Database\\Eloquent\\Model, static\(UX\\Embedding\\Jobs\\RemoveableEmbedCollection\)\>\:\:getEmbedKey\(\)\.$#'
 			identifier: method.notFound
 			count: 1
 			path: src/Jobs/RemoveableEmbedCollection.php
 
 		-
-			message: '#^Class Vormkracht10\\Embedding\\Jobs\\Embeddable not found\.$#'
+			message: '#^Class UX\\Embedding\\Jobs\\Embeddable not found\.$#'
 			identifier: class.notFound
 			count: 1
 			path: src/Jobs/RemoveableEmbedCollection.php

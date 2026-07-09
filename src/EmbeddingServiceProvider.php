@@ -1,9 +1,9 @@
 <?php
 
-namespace Vormkracht10\Embedding;
+namespace UX\Embedding;
 
 use Illuminate\Support\ServiceProvider;
-use Vormkracht10\Embedding\Commands\ImportCommand;
+use UX\Embedding\Commands\ImportCommand;
 
 class EmbeddingServiceProvider extends ServiceProvider
 {

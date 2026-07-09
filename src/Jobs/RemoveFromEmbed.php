@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\Embedding\Jobs;
+namespace UX\Embedding\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Database\ModelIdentifier;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\Embedding;
+namespace UX\Embedding;
 
 use Closure;
 use Illuminate\Database\Eloquent\Model;

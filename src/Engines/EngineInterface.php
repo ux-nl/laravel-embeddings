@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\Embedding\Engines;
+namespace UX\Embedding\Engines;
 
 interface EngineInterface
 {

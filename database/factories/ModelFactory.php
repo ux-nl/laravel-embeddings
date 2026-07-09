@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\Embedding\Database\Factories;
+namespace UX\Embedding\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Vormkracht10\Embedding;
+namespace UX\Embedding;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Scope;
-use Vormkracht10\Embedding\Events\ModelsFlushed;
-use Vormkracht10\Embedding\Events\ModelsImported;
+use UX\Embedding\Events\ModelsFlushed;
+use UX\Embedding\Events\ModelsImported;
 
 class EmbeddableScope implements Scope
 {

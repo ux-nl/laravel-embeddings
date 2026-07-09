@@ -1,10 +1,10 @@
 <?php
 
-namespace Vormkracht10\Embedding\Tests;
+namespace UX\Embedding\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Vormkracht10\Embedding\EmbeddingServiceProvider;
+use UX\Embedding\EmbeddingServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Vormkracht10\\Embedding\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'UX\\Embedding\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

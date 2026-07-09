@@ -1,9 +1,9 @@
 <?php
 
-namespace Vormkracht10\Embedding\Tests\Models;
+namespace UX\Embedding\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Vormkracht10\Embedding\Embeddable;
+use UX\Embedding\Embeddable;
 
 class EmbeddableTestModel extends Model
 {

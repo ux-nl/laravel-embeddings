@@ -1,6 +1,6 @@
 <?php
 
-// config for Vormkracht10/Embeddings
+// config for UX/Embeddings
 return [
     'enabled' => env('EMBEDDINGS_ENABLED', true),
     'driver' => env('EMBEDDINGS_DRIVER', 'null'), // 'null' / 'openai'
